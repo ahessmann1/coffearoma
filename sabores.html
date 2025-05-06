@@ -1,0 +1,259 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Aroma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+  </style>
+</head>
+<body class="bg-[#FAE9D7] flex items-center justify-center min-h-screen p-4">
+  <div class="max-w-xs w-full rounded-xl overflow-hidden select-none" style="background-color:#FFF9E9;">
+    <div class="px-6 py-6" style="background-color:#3F2613;">
+      <h1 class="text-white font-montserrat font-extrabold text-3xl leading-tight tracking-wide">
+        CAFÉ AROMA
+      </h1>
+      <p class="text-[#FFF9E9] font-opensans text-lg mt-1">Vote no próximo sabor!</p>
+    </div>
+    <div class="px-6 py-5 space-y-6">
+      <section>
+        <h2 class="text-[#3F2613] font-montserrat font-extrabold text-xl mb-4">
+          Tipos de Leite
+        </h2>
+        <ul class="space-y-3" id="milk-list">
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite Integral
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite de Amêndoas
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite de Soja
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite Vegetal de Caju
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite de Coco
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite de Aveia
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite Vegetal de Cânhamo
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-[#3F2613] font-montserrat font-extrabold text-xl mb-4">
+          Tipos de Complementos
+        </h2>
+        <ul class="space-y-3" id="complement-list">
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Canela em Pó
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Chantilly
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Cacau em Pó
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Pedaços de Chocolate
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Nutella
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite em Pó
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Caramelo
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+          <li class="flex items-center justify-between border border-[#FAE9D7] rounded-lg p-4 cursor-pointer" style="background-color:#FFF9E9;">
+            <div>
+              <h3 class="text-[#3F2613] font-montserrat font-extrabold text-lg leading-snug">
+                Leite Condensado
+              </h3>
+            </div>
+            <div class="flex items-center space-x-2 text-[#3F2613] text-2xl like-btn">
+              <i class="far fa-thumbs-up"></i>
+              <span class="like-count text-base font-semibold select-none">0</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div id="finalize-container" class="mt-6 hidden">
+        <button class="w-full bg-[#3F2613] text-[#FFF9E9] font-montserrat font-extrabold text-lg py-3 rounded-lg hover:bg-[#5a3b1a] transition">
+          <a href="final.html" class="bg-[#422a17] text-[#f7f0d9] rounded-md px-6 py-2 text-base font-normal flex-1 text-center">Finalizar</a>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to handle single like per category
+    function handleSingleLike(containerId) {
+      const container = document.getElementById(containerId);
+      let selectedItem = null;
+
+      container.querySelectorAll('.like-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // If this item is already selected, do nothing
+          if (selectedItem === btn) return;
+
+          // Remove previous selection if any
+          if (selectedItem) {
+            const prevCountSpan = selectedItem.querySelector('.like-count');
+            prevCountSpan.textContent = '0';
+            selectedItem.querySelector('i').classList.remove('fas');
+            selectedItem.querySelector('i').classList.add('far');
+          }
+
+          // Set new selection
+          selectedItem = btn;
+          const countSpan = btn.querySelector('.like-count');
+          countSpan.textContent = '1';
+          const icon = btn.querySelector('i');
+          icon.classList.remove('far');
+          icon.classList.add('fas');
+
+          checkFinalizeButton();
+        });
+      });
+
+      return () => selectedItem;
+    }
+
+    const getSelectedMilk = handleSingleLike('milk-list');
+    const getSelectedComplement = handleSingleLike('complement-list');
+
+    function checkFinalizeButton() {
+      const finalizeContainer = document.getElementById('finalize-container');
+      if (getSelectedMilk() && getSelectedComplement()) {
+        finalizeContainer.classList.remove('hidden');
+      } else {
+        finalizeContainer.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

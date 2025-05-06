@@ -1,0 +1,136 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Aroma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+  </style>
+</head>
+<body class="bg-[#FAEBD7] flex items-center justify-center min-h-screen p-4">
+  <div class="max-w-xs w-full rounded-xl overflow-hidden" style="background-color:#FFF9E9;">
+    <header class="bg-[#3E2614] p-6 rounded-t-xl">
+      <h1 class="text-white font-montserrat font-extrabold text-3xl leading-tight">
+        CAFÉ AROMA
+      </h1>
+      <p class="text-[#FFF9E9] font-roboto text-lg mt-1">Entre, ganhe descontos e selecione o café do mês</p>
+    </header>
+    <main class="p-6">
+      <form id="signupForm" class="space-y-6" onsubmit="return false;">
+        <div>
+          <label for="email" class="block text-[#3E2614] font-montserrat font-extrabold text-lg mb-2">
+            Adicione o email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seuemail@exemplo.com"
+            class="w-full rounded-md border border-[#FAF3D6] bg-[#FFF9E9] px-4 py-2 text-[#3E2614] font-roboto text-base focus:outline-none focus:ring-2 focus:ring-[#3E2614]"
+            required
+          />
+        </div>
+        <div>
+          <label for="confirmEmail" class="block text-[#3E2614] font-montserrat font-extrabold text-lg mb-2">
+            Confirme o email
+          </label>
+          <input
+            type="email"
+            id="confirmEmail"
+            name="confirmEmail"
+            placeholder="confirme seu email"
+            class="w-full rounded-md border border-[#FAF3D6] bg-[#FFF9E9] px-4 py-2 text-[#3E2614] font-roboto text-base focus:outline-none focus:ring-2 focus:ring-[#3E2614]"
+            required
+          />
+        </div>
+        <div>
+          <label for="senha" class="block text-[#3E2614] font-montserrat font-extrabold text-lg mb-2">
+            Crie uma senha
+          </label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="••••••••"
+            class="w-full rounded-md border border-[#FAF3D6] bg-[#FFF9E9] px-4 py-2 text-[#3E2614] font-roboto text-base focus:outline-none focus:ring-2 focus:ring-[#3E2614]"
+            required
+          />
+          <p id="senhaAviso" class="text-sm text-red-600 mt-1 hidden">
+            A senha deve ter no mínimo 5 caracteres e conter pelo menos 2 números.
+          </p>
+        </div>
+        <div>
+          <label for="confirmSenha" class="block text-[#3E2614] font-montserrat font-extrabold text-lg mb-2">
+            Confirme a senha
+          </label>
+          <input
+            type="password"
+            id="confirmSenha"
+            name="confirmSenha"
+            placeholder="••••••••"
+            class="w-full rounded-md border border-[#FAF3D6] bg-[#FFF9E9] px-4 py-2 text-[#3E2614] font-roboto text-base focus:outline-none focus:ring-2 focus:ring-[#3E2614]"
+            required
+          />
+        </div>
+        <button
+          type=""
+          id="submitBtn"
+          disabled
+          class="w-full bg-[#3E2614] text-[#FFF9E9] font-montserrat font-extrabold text-lg py-3 rounded-md opacity-50 cursor-not-allowed transition-colors"
+        > <a href="index.html" class="bg-[#422a17] text-[#f7f0d9] rounded-md px-6 py-2 text-base font-normal flex-1 text-center">enviar</a></button>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById('email');
+    const confirmEmailInput = document.getElementById('confirmEmail');
+    const senhaInput = document.getElementById('senha');
+    const confirmSenhaInput = document.getElementById('confirmSenha');
+    const submitBtn = document.getElementById('submitBtn');
+    const senhaAviso = document.getElementById('senhaAviso');
+
+    function validaSenha(senha) {
+      const minLength = senha.length >= 5;
+      const numCount = (senha.match(/\d/g) || []).length;
+      return minLength && numCount >= 2;
+    }
+
+    function checkInputs() {
+      const emailFilled = emailInput.value.trim() !== '';
+      const confirmEmailFilled = confirmEmailInput.value.trim() !== '';
+      const senhaFilled = senhaInput.value.trim() !== '';
+      const confirmSenhaFilled = confirmSenhaInput.value.trim() !== '';
+
+      const emailsMatch = emailInput.value === confirmEmailInput.value;
+      const senhasMatch = senhaInput.value === confirmSenhaInput.value;
+      const senhaValida = validaSenha(senhaInput.value);
+
+      if (!senhaValida && senhaFilled) {
+        senhaAviso.classList.remove('hidden');
+      } else {
+        senhaAviso.classList.add('hidden');
+      }
+
+      // Enable submit only if all fields are filled (regardless of matching or validation)
+      if (emailFilled && confirmEmailFilled && senhaFilled && confirmSenhaFilled) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    }
+
+    emailInput.addEventListener('input', checkInputs);
+    confirmEmailInput.addEventListener('input', checkInputs);
+    senhaInput.addEventListener('input', checkInputs);
+    confirmSenhaInput.addEventListener('input', checkInputs);
+  </script>
+</body>
+</html>
